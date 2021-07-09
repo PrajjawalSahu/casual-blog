@@ -12,10 +12,11 @@
   overflow: hidden;
   width: 100%; */
 
-
-
   /* block-overflow: ellipsis;
   max-lines: 3; */
+  border-radius: 15px;
+  /* border: darkgreen 2px solid; */
+  overflow: hidden;
 }
 
 
@@ -38,6 +39,7 @@
     background-color: #eee;
     padding:10px 20px 4px 20px;
     height: 96px;
+    height: auto;
     /* overflow: hidden;
     box-sizing: content-box;
     width: 300px;*/

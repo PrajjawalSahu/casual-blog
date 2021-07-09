@@ -4,18 +4,7 @@ import Post from './Post.jsx'
 import { db } from './firebase';
 
 function PostList() {
-    const [postArray, setPostArray] = useState([
-        // {
-        //     username: "Prajjawal Sahu",
-        //     title: "First Post",
-        //     text: "first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post first blog post "
-        // },
-        // {
-        //     username: "Uchiha Itachi",
-        //     title: "Second Post",
-        //     text: "second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe second post hehe "
-        // }
-    ]);
+    const [postArray, setPostArray] = useState([]);
 
         //useEffect runs a piece of code based on a specific condition
     useEffect( () => {
