@@ -1,12 +1,12 @@
-.post{
-    /* padding: 5px; */
-    /* width: auto; */
-    /* height: 200px; */
-    /* border: 5px solid green; */
-    margin-bottom: 20px;
-    /* overflow: auto; */
+.post {
+  /* padding: 5px; */
+  /* width: auto; */
+  /* height: 200px; */
+  /* border: 5px solid green; */
+  margin-bottom: 20px;
+  /* overflow: auto; */
 
-    /* display: inline-block;
+  /* display: inline-block;
     text-overflow: ellipssis;
   white-space: nowrap;
   overflow: hidden;
@@ -19,36 +19,40 @@
   overflow: hidden;
 }
 
-
-.post_header{
-    padding: 2px 14px;
-    background: #ddd;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
+.blog-modal:active{
+  outline: lawngreen solid 5px;
+}
+.post_header {
+  padding: 10px 14px;
+  background: #c2e2fb;
+  font-size: 16px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
 }
 
-.post_avatar{
-    /* margin-right: 5px; */
-    height: 30px;
-    transform: scale(0.7);
+.post_avatar {
+  /* margin-right: 5px; */
+  height: 30px;
+  transform: scale(0.7);
 }
 
 .post_text {
-    color: #444;
-    background-color: #eee;
-    padding:10px 20px 4px 20px;
-    height: 96px;
-    height: auto;
-    /* overflow: hidden;
+  cursor: pointer;
+  color: #444;
+  background-color: #c2e2fb;
+  padding: 10px 20px 4px 20px;
+  height: 96px;
+  /* height: auto; */
+  /* overflow: hidden;
     box-sizing: content-box;
     width: 300px;*/
-    font-size: 16px;
-    line-height: 24px;
-    font-family: Helvetica, sans-serif;
-    /* max-lines: 3;  */
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: Helvetica, sans-serif;
+  /* max-lines: 3;  */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

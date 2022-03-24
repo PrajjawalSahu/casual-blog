@@ -4,6 +4,7 @@ import "./App.css";
 import { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CreatePost from "./CreatePost";
+import BlogPage from "./BlogPage"
 
 function App() {
   const [userLog, setUserLog] = useState(null);
@@ -21,6 +22,7 @@ function App() {
           <Route path="/create">
             <CreatePost username={userLog} setUserLog={setUserLog} />
           </Route>
+
         </Switch>
       </div>
     </BrowserRouter>

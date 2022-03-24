@@ -1,11 +1,12 @@
 .post_list{
-    height: 1000px;
-    width: 33.33333%;
-    padding: 20px;
+    /* height: 1000px; */
+    /* width: 40%; */
+    padding: 100px 20px;
     /* width: 600px; */
     max-width: 600px;
-    min-width: 300px;
+    /* min-width: 100vw; */
     /* border: 5px solid red; */
-    align-items: center;
+    /* align-items: center; */
     margin: auto;
+    /* margin-top: 2rem; */
 }

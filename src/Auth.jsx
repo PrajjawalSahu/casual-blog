@@ -4,6 +4,7 @@ import { Button, Container, TextField, Modal } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Home from './Home'
 import { useHistory } from 'react-router-dom';
+import './Auth.css'
 
 function getModalStyle() {
     const top = 50;
@@ -18,18 +19,32 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        margin: 'auto',
+        transform: 'translateX(-10%)',
         '& .MuiTextField-root': {
-            margin: theme.spacing(2),
-            width: '25ch',
+            margin: '15px',
+            width: '100%',
+            border: '#ff0000',
+            display: 'flex',
+            flexDirection: 'column',
         },
+        '& .MuiButton-root':{
+            margin: '15px',
+            width: '100%',
+            backgroundColor: '#2D4F6B',
+            color: 'white',
+        }
     },
     paper: {
         position: 'absolute',
-        width: 400,
+        display: 'flex',
+        alignItems: 'center',
+        width: '90%',
+        maxWidth: 500,
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
+        padding: theme.spacing(3, 3, 4),
     },
 }));
 
@@ -48,7 +63,7 @@ export default function Auth({ userLog, setUserLog }) {
     // const [userLog, setUserLog] = useState(null);
     const validate = () => {
         let temp;
-        temp={username}?"":"Please choose a username"
+        temp = { username } ? "" : "Please choose a username"
     }
 
     async function signUp(event) {
@@ -102,7 +117,7 @@ export default function Auth({ userLog, setUserLog }) {
     }, [])
 
     return (
-        <div>
+        <div className="Auth-component">
             <Modal
                 open={open}
                 onClose={() => { setOpen(false) }}      //onClose listens for clicks outside the modal --and-- the inline function sets the state "open" to false when clicked outside the modal that means modal will close when clicked outside
@@ -111,19 +126,20 @@ export default function Auth({ userLog, setUserLog }) {
                     <div style={modalStyle} className={classes.paper}>
                         <form className={classes.root} onSubmit={signUp} noValidate autoComplete="off">
                             <TextField
-                                required id="standard-required" 
-                                label="UserName"
+                                required 
+                                id="standard-required"
+                                label="Username"
                                 type="text"
                                 // placeholder="Username"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
-                                // error
-                                // helperText="Some error"
+                            // error
+                            // helperText="Some error"
                             />
                             <TextField
                                 required={true}
                                 type="text"
-                                label="e-mail"
+                                label="E-mail"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
@@ -134,7 +150,7 @@ export default function Auth({ userLog, setUserLog }) {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            <Button onClick={signUp}>Sign Up</Button>
+                            <Button type="submit" onClick={signUp}>Sign Up</Button>
                         </form>
                     </div>
                 }
@@ -145,37 +161,59 @@ export default function Auth({ userLog, setUserLog }) {
             >
                 {
                     <div style={modalStyle} className={classes.paper}>
-                        <form onSubmit={signIn} noValidate autoComplete="off">
+                        <form className={classes.root} onSubmit={signIn} noValidate autoComplete="off">
                             <TextField
+                                label="E-mail"
                                 type="text"
-                                placeholder="E-mail"
+                                // placeholder="E-mail"
                                 required={true}
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <TextField
                                 type="text"
-                                placeholder="Password"
+                                label="Password"
                                 value={password}
                                 required={true}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            <Button onClick={signIn}>Sign In</Button>
+                            <Button type="submit" onClick={signIn}>Sign In</Button>
                         </form>
                     </div>
                 }
             </Modal>
 
             {userLog ? (
-                <Button onClick={() => { auth.signOut(); setUserLog(null) }}>Log Out</Button>
+                <div className="login-container">
+                    <Button className="auth-page-button" onClick={() => { auth.signOut(); setUserLog(null) }}>Log Out</Button>
+                </div>
             ) : (
                 <div className="login-container">
-                    <Button onClick={() => { setOpenSignIn(true) }}>Sign In</Button>
-                    <Button onClick={() => { setOpen(true) }}>Sign Up</Button>
+                    <div className="login-inner-container">
+                        <div className="logo auth-page-logo">
+                            casual blogs.
+                        </div>
+                        <h3 className="auth-page-subheadings">
+                            Log in to your account
+                        </h3>
+                        <Button className="auth-page-button auth-page-button-login" onClick={() => { setOpenSignIn(true) }}>Sign In</Button>
+                        <div className="pseudo">
+                            <h3 className="auth-page-or">
+                                OR
+                            </h3>
+                        </div>
+
+                        <h3 className="auth-page-subheadings">
+                            Create your account
+                        </h3>
+                        <Button className="auth-page-button" onClick={() => { setOpen(true) }}>Sign Up</Button>
+                    </div>
                 </div>
             )
             }
-
+            <div className="auth-right-side">
+                {/* this is right side */}
+            </div>
 
         </div>
     )

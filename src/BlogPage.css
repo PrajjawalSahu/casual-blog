@@ -1,0 +1,14 @@
+.BlogPage-component{
+    /* max-width: 800px; */
+    /* width: 80%; */
+    /* border: yellow 3px solid; */
+    margin: 0rem 0.5rem 0rem 2rem;
+    max-height: 75vh;
+    overflow: auto;
+}
+.blog-page-author{
+    color: gray;
+}
+.blog-page-text{
+    margin-top: 2rem;
+}

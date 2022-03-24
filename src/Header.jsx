@@ -1,38 +1,48 @@
 import React from 'react'
 import './Header.css'
 import Auth from './Auth'
+// import logo from './logo.png';
 
-function Header({ userLog }) {
+function Header({ userLog, createButtonBool }) {
     return (
-        <div className="header">
-            {/* casual blog / prajjawal brand website logo */}
-            logo
-
-            {/* different tabs / different pages */}
-            {/* &emsp;tab1 tab2 tab3 */}
-            {userLog ? (
-                <a href="/create"><button>Create Post</button></a>
-            ) : (
-                <div>
-                    <h5>log in to create a post</h5>
+        <div className="header-component">
+            <div className="width-control-container">
+                {/* casual blog / prajjawal brand website logo */}
+                <a href="/"><div className="header-child logo">
+                    casual blogs.
                 </div>
-            )
-            }
+                </a>
 
-            {userLog ? (
-                <a href="/auth"><button>Log out</button></a>
-            ) : (
-                <div>
-                    <a href="/auth"><button>Log in</button></a>
-                </div>
-            )
-            }
+                {/* different tabs / different pages */}
+                {/* &emsp;tab1 tab2 tab3 */}
+
+                {userLog ? (
+                    <div className="header-child ">
+                        <a href="/create"><button className="header-button create-new-post-button">Create New Post</button></a>
+                    </div>
+                ) : (
+                    <div className="header-child">
+                        <h5 className="login-to-create-post-message">Log in to create a post</h5>
+                    </div>
+                )
+                }
+
+                {userLog ? (
+                    <div className="header-child">
+                        <a href="/auth"><button className="header-button">Log out</button></a>
+                    </div>
+                ) : (
+                    <div className="header-child">
+                        <a href="/auth"><button className="header-button">Log in</button></a>
+                    </div>
+                )
+                }
 
 
-            {/* profile, notification,etc buttons */}
-            {/* &emsp;notification profile logout  */}
-            {/* <Auth /> */}
-
+                {/* profile, notification,etc buttons */}
+                {/* &emsp;notification profile logout  */}
+                {/* <Auth /> */}
+            </div>
         </div>
     )
 }

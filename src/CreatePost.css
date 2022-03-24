@@ -1,0 +1,40 @@
+*{
+  /* background: #C2E2FB; */
+}
+.create-post-full-page-container {
+  max-width: 750px;
+  width: 100%;
+  margin: 5rem auto;
+  /* border: chartreuse 2px dashed; */
+}
+.login-to-create-a-post{
+  color: #2D4F6B;
+  font-size: 4rem;
+  margin: 33vh auto;
+  text-align: center;
+  /* line-height: 90vh; */
+}
+.create-post-author-text {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+    color: gray;
+  /* border:2px solid chartreuse ;   */
+  align-items: center;
+  margin: 12px;
+}
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  /* border:2px solid chartreuse ; */
+  /* width: 50vw; */
+  /* align-items: center; */
+}
+.create-post-blog-text-input {
+  /* height: 400px; */
+  /* background-color: green; */
+}
+
+.create-post-post-button{
+    background: #2D4F6B !important;
+}
